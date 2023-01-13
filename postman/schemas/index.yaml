@@ -1,0 +1,816 @@
+openapi: "3.0.0"
+
+servers:
+    - url: https://api.tajming.hr
+      description: Production Server on Cloudflare
+    - url: http://localhost:3000
+      description: Localhost server
+
+info:
+    version: "1.0.0"
+    title: "Tajming API"
+    description: Appointment booking API for hair, nail and beauty salons, massage & spa, personal trainers, etc.
+
+paths:
+    /categories:
+        get:
+            summary: Get all supported categories
+            tags:
+                - categories
+            operationId: getCategories
+            responses:
+                200:
+                    description: Array containing all the supported categories
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/Categories"
+                500:
+                    description: Unexpected error
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/Error"
+    /brands:
+        get:
+            summary: Get all supported brands
+            tags:
+                - brands
+            operationId: getBrands
+            responses:
+                200:
+                    description: Array containing all the supported brands
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/Brands"
+                500:
+                    description: Unexpected error
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/Error"
+    /cities:
+        get:
+            summary: Get all supported cities
+            tags:
+                - cities
+            operationId: getCities
+            responses:
+                200:
+                    description: Array containing all the supported cities
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/Cities"
+                500:
+                    description: Unexpected error
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/Error"
+    /companies:
+        get:
+            summary: Get all supported cities
+            tags:
+                - companies
+            operationId: getCompanies
+            parameters:
+                - name: q
+                  in: query
+                  description: Search word that should be used for querying the database
+                  required: false
+                  schema:
+                      type: string
+                - name: category_id
+                  in: query
+                  description: Show companies by category_id (Filter only by certain category)
+                  required: false
+                  schema:
+                      type: number
+                - name: brand_id
+                  in: query
+                  description: Show brands by brand_id (Filter only by certain brand)
+                  required: false
+                  schema:
+                      type: number
+                - name: city_id
+                  in: query
+                  description: Show brands by city_id (Filter only by certain city)
+                  required: false
+                  schema:
+                      type: number
+                - name: featured
+                  in: query
+                  description: Show only featured companies
+                  required: false
+                  schema:
+                      type: boolean
+                - name: latest
+                  in: query
+                  description: Show only the latest companies that are added
+                  required: false
+                  schema:
+                      type: boolean
+                - name: sort
+                  in: query
+                  description: Sort the companies by name (ascending or descending)
+                  required: false
+                  schema:
+                      type: string
+                      enum: [asc, desc]
+            responses:
+                200:
+                    description: Array containing Companies that match the filter
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/Companies"
+                500:
+                    description: Unexpected error
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/Error"
+    /companies/{companyId}:
+        get:
+            parameters:
+                - name: companyId
+                  in: path
+                  required: true
+                  schema:
+                      type: integer
+            summary: Get specific company long details
+            operationId: getCompanyById
+            tags:
+                - companies
+            responses:
+                200:
+                    description: Company details for the specified `companyId`
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/CompanyLongDetails"
+                404:
+                    description: No company found for the provided `companyId`
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/Error"
+                500:
+                    description: Unexpected error
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/Error"
+    /companies/{companyId}/images:
+        get:
+            parameters:
+                - name: companyId
+                  in: path
+                  required: true
+                  schema:
+                      type: integer
+            summary: Get images for the specified `companyId`
+            operationId: getCompanyImages
+            tags:
+                - companies
+            responses:
+                200:
+                    description: Array of image URLs for the specified `companyId`
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/Images"
+                404:
+                    description: No company found for the provided `companyId`
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/Error"
+                500:
+                    description: Unexpected error
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/Error"
+    /services:
+        get:
+            parameters:
+                - name: companyId
+                  in: query
+                  required: true
+                  description: This will filter services by `companyId`, to show only services that the specified company offers
+                  schema:
+                      type: integer
+            summary: Get services offered by a specific company
+            operationId: getServices
+            tags:
+                - services
+            responses:
+                200:
+                    description: Array containing services offered by the specified `companyId`
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/Services"
+                404:
+                    description: No company found for the provided `companyId`
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/Error"
+                500:
+                    description: Unexpected error
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/Error"
+    /staff:
+        get:
+            parameters:
+                - name: companyId
+                  in: query
+                  required: true
+                  description: This will filter staff by `companyId`, to show only services that the specified company offers
+                  schema:
+                      type: integer
+            summary: Get specific company staff member details in an array
+            operationId: getStaff
+            tags:
+                - staff
+            responses:
+                200:
+                    description: Array containing services offered by the specified `companyId`
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/Staff"
+                404:
+                    description: No company found for the provided `companyId`
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/Error"
+                500:
+                    description: Unexpected error
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/Error"
+    /staff/{staffId}/availability:
+        get:
+            parameters:
+                - name: staffId
+                  in: path
+                  required: true
+                  description: Specify the `staffId` you want to check availability for
+                  schema:
+                      type: integer
+                - name: date
+                  in: query
+                  required: false
+                  description: Specify the `date` you want to check availability for. If date is not specified, API will return availability for today in UTC
+                  schema:
+                      type: string
+            summary: Get staff availability for a certain date
+            operationId: getStaffAvailability
+            tags:
+                - staff
+            responses:
+                200:
+                    description: Array containing availability for a specified `staffId`, filtered by `date` and sorted ascending
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/StaffAvailability"
+                404:
+                    description: No staff found for the provided `staffId`
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/Error"
+                500:
+                    description: Unexpected error
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/Error"
+    /feedback:
+        get:
+            summary: Get feedback items to show on landing page
+            operationId: getFeedback
+            tags:
+                - feedback
+            responses:
+                200:
+                    description: Array containing all stored feedback items for the page
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/Feedbacks"
+                500:
+                    description: Unexpected error
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/Error"
+    /appointments:
+        post:
+            summary: Submit new appointment to the store/company
+            operationId: postAppointment
+            tags:
+                - appointments
+            requestBody:
+                description: Appointment details
+                content:
+                    application/json:
+                        schema:
+                            $ref: '#/components/schemas/AppointmentReq'
+            responses:
+                200:
+                    description: Appointment response details and confirmation
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/Appointment"
+                500:
+                    description: Unexpected error
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/Error"
+        get:
+            summary: Get list of appointments for the logged in user
+            operationId: getAppointments
+            tags:
+                - appointments
+            requestBody:
+                description: Appointment details
+                content:
+                    application/json:
+                        schema:
+                            $ref: '#/components/schemas/Appointment'
+            responses:
+                200:
+                    description: Appointment response details and confirmation
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/Appointments"
+                400:
+                    description: Bad request (missing parameters)
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/Error" 
+                401:
+                    description: Unauthorized access
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/Error"
+                500:
+                    description: Unexpected error
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/Error"
+    /signIn:
+        post:
+            summary: Sends a sign in request. If user does not exist - system will create it and return the User object; otherwise, it will just return the User object
+            operationId: signIn
+            tags:
+                - auth
+            security:
+                -  BearerAuth: []
+            requestBody:
+                content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/RegisterRequest"
+            responses:
+                200:
+                    description: Logged-in user details
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/User"
+                400:
+                    description: Bad request (missing parameters)
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/Error" 
+                401:
+                    description: Bad credentials
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/Error" 
+                500:
+                    description: Unexpected error
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/Error"
+components:
+    schemas:
+        Categories:
+            description: Array of categories
+            type: array
+            items:
+                $ref: "#/components/schemas/Category"
+        Category:
+            description: Category details
+            type: string
+            required:
+                - id
+                - name
+            properties:
+                id:
+                    type: number
+                name:
+                    type: string
+        Brands:
+            description: Array of brands
+            type: array
+            items:
+                $ref: "#/components/schemas/Brand"
+        Brand:
+            description: Brand details
+            type: string
+            required:
+                - id
+                - name
+            properties:
+                id:
+                    type: number
+                name:
+                    type: string
+        Cities:
+            description: Array of cities
+            type: array
+            items:
+                $ref: "#/components/schemas/City"
+        City:
+            description: City details
+            type: string
+            required:
+                - id
+                - name
+            properties:
+                id:
+                    type: number
+                name:
+                    type: string
+        Companies:
+            description: Array of companies
+            type: array
+            items:
+                $ref: "#/components/schemas/CompanyShortDetails"
+        CompanyLongDetails:
+            description: Company long details
+            type: string
+            required:
+                - id
+                - title
+                - desc
+                - address
+                - categories
+                - brands
+                - city
+                - email
+                - phone
+                - working_hours
+                - images
+                - announcement
+                - score
+                - is_opened
+                - is_reservation_enabled
+                - feedbacks
+                - facebook_url
+                - instagram_url
+            properties:
+                id:
+                    type: number
+                title:
+                    type: string
+                desc:
+                    type: string
+                address:
+                    type: string
+                categories:
+                    $ref: "#/components/schemas/Categories"
+                brands:
+                    $ref: "#/components/schemas/Brands"
+                city:
+                    $ref: "#/components/schemas/City"
+                services:
+                    $ref: "#/components/schemas/Services"
+                email:
+                    type: string
+                phone:
+                    type: string
+                working_hours:
+                    type: array
+                    items:
+                        type: array
+                        items:
+                            type: string
+                lat:
+                    type: number
+                long:
+                    type: number
+                images:
+                    $ref: "#/components/schemas/Images"
+                announcement:
+                    type: string
+                score:
+                    type: number
+                is_opened:
+                    type: boolean
+                is_reservation_enabled:
+                    type: boolean
+                feedbacks:
+                    $ref: '#/components/schemas/Feedbacks'
+                facebook_url:
+                    type: string
+                instagram_url:
+                    type: string
+        CompanyShortDetails:
+            description: Company short details
+            type: string
+            required:
+                - id
+                - title
+                - desc
+                - address
+                - categories
+                - email
+                - images
+                - is_opened
+                - is_reservation_enabled
+            properties:
+                id:
+                    type: number
+                title:
+                    type: string
+                desc:
+                    type: string
+                address:
+                    type: string
+                categories:
+                    $ref: "#/components/schemas/Categories"
+                email:
+                    type: string
+                lat:
+                    type: number
+                long:
+                    type: number
+                images:
+                    $ref: "#/components/schemas/Images"
+                is_opened:
+                    type: boolean
+                is_reservation_enabled:
+                    type: boolean
+        Services:
+            description: Array of services
+            type: array
+            items:
+                $ref: "#/components/schemas/Service"
+        Service:
+            description: Service details
+            type: string
+            required:
+                - id
+                - name
+                - products
+            properties:
+                id:
+                    type: number
+                name:
+                    type: string
+                products:
+                    $ref: "#/components/schemas/Products"
+        Products:
+            description: Array of products
+            type: array
+            items:
+                $ref: "#/components/schemas/Product"
+        Product:
+            description: Product details
+            type: string
+            required:
+                - id
+                - title
+                - duration
+                - description
+                - price
+            properties:
+                id:
+                    type: number
+                title:
+                    type: string
+                duration:
+                    type: integer
+                description:
+                    type: string
+                price:
+                    type: number
+        Staff:
+            description: Array of staff members
+            type: array
+            items:
+                $ref: "#/components/schemas/StaffMember"
+        StaffMember:
+            description: Staff member details
+            type: string
+            required:
+                - id
+                - full_name
+            properties:
+                id:
+                    type: number
+                full_name:
+                    type: string
+        StaffAvailability:
+            description: Staff member details
+            type: string
+            required:
+                - id
+                - full_name
+                - date
+                - availability
+            properties:
+                id:
+                    type: number
+                full_name:
+                    type: string
+                date:
+                    type: string
+                    format: date
+                availability:
+                    type: array
+                    items:
+                        $ref: "#/components/schemas/AvailabilityTimeslot"
+        AvailabilityTimeslot:
+            description: Item showing single availability timeslot
+            type: string
+            required:
+                - date_from
+                - time_from
+                - date_to
+                - time_to
+                - duration
+            properties:
+                date_from:
+                    type: string
+                    format: date
+                time_from:
+                    type: string
+                    format: time
+                date_to:
+                    type: string
+                    format: date
+                time_to:
+                    type: string
+                    format: time
+                duration:
+                    type: number
+        Feedbacks:
+            description: Array of feedbacks
+            type: array
+            items:
+                $ref: "#/components/schemas/Feedback"
+        Feedback:
+            description: Feedback details
+            type: string
+            required:
+                - description
+            properties:
+                id:
+                    type: number
+                name:
+                    type: string
+                description:
+                    type: string
+                score:
+                    type: number
+        Appointments:
+            description: Array of user appointments
+            type: array
+            items:
+                $ref: "#/components/schemas/Appointment"
+        AppointmentRequest:
+            description: Details for the appointment to be sent as a request
+            type: string
+            required:
+                - user_id
+                - product_id
+                - staff_id
+                - date_from
+                - time_from
+                - date_to
+                - time_to
+                - full_name
+                - email
+                - phone
+                - is_phone_validated
+                - is_toc_accepted
+            properties:
+                user_id:
+                    type: number
+                product_id:
+                    type: number
+                staff_id:
+                    type: number
+                date_from:
+                    type: string
+                    format: date
+                time_from:
+                    type: string
+                    format: time
+                date_to:
+                    type: string
+                    format: date
+                time_to:
+                    type: string
+                    format: time
+                full_name:
+                    type: string
+                email:
+                    type: string
+                phone:
+                    type: string
+                is_phone_validated:
+                    type: boolean
+                is_toc_accepted:
+                    type: boolean
+        Appointment:
+            allOf:     # Combines the BasicErrorModel and the inline model
+                - $ref: '#/components/schemas/AppointmentRequest'
+                - type: object
+                  required:
+                    - id
+                    - status
+                  properties:
+                    id:
+                        type: number
+                    status:
+                        type: string
+                        description: Appointment status
+        SignInRequest:
+            description: Sign In request with the JWT token for registration.
+            type: string
+            required:
+                - token
+            properties:
+                token:
+                    type: string
+        User:
+            description: User details
+            type: string
+            required:
+                - id
+                - email
+                - phone
+                - full_name
+            properties:
+                id:
+                    type: number
+                email:
+                    type: string
+                phone:
+                    type: string
+                full_name:
+                    type: string
+        Images:
+            description: Array of images
+            type: array
+            items:
+                $ref: "#/components/schemas/Image"
+        Image:
+            description: Image details
+            type: string
+            required:
+                - id
+                - url
+            properties:
+                id:
+                    type: number
+                url:
+                    type: string
+        Error:
+            type: object
+            required:
+                - message
+            properties:
+                message:
+                    description: A human readable error message
+                    type: string
+    securitySchemes:
+        BearerAuth:
+            type: http
+            scheme: bearer
+security: []

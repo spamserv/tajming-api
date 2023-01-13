@@ -1,0 +1,1813 @@
+{
+	"info": {
+		"_postman_id": "b0d1e8ca-2516-42ea-9046-67641f1093c6",
+		"name": "Tajming API collection",
+		"description": "Appointment booking API for hair, nail and beauty salons, massage & spa, personal trainers, etc.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "5766489-b0d1e8ca-2516-42ea-9046-67641f1093c6"
+	},
+	"item": [
+		{
+			"name": "companies",
+			"item": [
+				{
+					"name": "{companyId}",
+					"item": [
+						{
+							"name": "Get specific company long details",
+							"id": "8679e15f-7c21-46b2-80cd-e6072c620ff8",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/companies/:companyId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"companies",
+										":companyId"
+									],
+									"variable": [
+										{
+											"key": "companyId",
+											"value": "-70436581",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "f7af94d4-1063-4d7c-8b3f-7f10ff3cf928",
+									"name": "Company details for the specified `companyId`",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/companies/:companyId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"companies",
+												":companyId"
+											],
+											"variable": [
+												{
+													"key": "companyId",
+													"value": "-70436581",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n\t\"id\": \"<number>\",\n\t\"title\": \"<string>\",\n\t\"desc\": \"<string>\",\n\t\"address\": \"<string>\",\n\t\"categories\": [\n\t\t{\n\t\t\t\"id\": \"<number>\",\n\t\t\t\"name\": \"<string>\"\n\t\t},\n\t\t{\n\t\t\t\"id\": \"<number>\",\n\t\t\t\"name\": \"<string>\"\n\t\t}\n\t],\n\t\"brands\": [\n\t\t{\n\t\t\t\"id\": \"<number>\",\n\t\t\t\"name\": \"<string>\"\n\t\t},\n\t\t{\n\t\t\t\"id\": \"<number>\",\n\t\t\t\"name\": \"<string>\"\n\t\t}\n\t],\n\t\"city\": {\n\t\t\"id\": \"<number>\",\n\t\t\"name\": \"<string>\"\n\t},\n\t\"email\": \"<string>\",\n\t\"phone\": \"<string>\",\n\t\"working_hours\": [\n\t\t[\n\t\t\t\"<string>\",\n\t\t\t\"<string>\"\n\t\t],\n\t\t[\n\t\t\t\"<string>\",\n\t\t\t\"<string>\"\n\t\t]\n\t],\n\t\"images\": [\n\t\t{\n\t\t\t\"id\": \"<number>\",\n\t\t\t\"url\": \"<string>\"\n\t\t},\n\t\t{\n\t\t\t\"id\": \"<number>\",\n\t\t\t\"url\": \"<string>\"\n\t\t}\n\t],\n\t\"announcement\": \"<string>\",\n\t\"score\": \"<number>\",\n\t\"is_opened\": \"<boolean>\",\n\t\"is_reservation_enabled\": \"<boolean>\",\n\t\"feedbacks\": [\n\t\t{\n\t\t\t\"description\": \"<string>\",\n\t\t\t\"id\": \"<number>\",\n\t\t\t\"name\": \"<string>\",\n\t\t\t\"score\": \"<number>\"\n\t\t},\n\t\t{\n\t\t\t\"description\": \"<string>\",\n\t\t\t\"id\": \"<number>\",\n\t\t\t\"name\": \"<string>\",\n\t\t\t\"score\": \"<number>\"\n\t\t}\n\t],\n\t\"facebook_url\": \"<string>\",\n\t\"instagram_url\": \"<string>\",\n\t\"services\": [\n\t\t{\n\t\t\t\"id\": \"<number>\",\n\t\t\t\"name\": \"<string>\",\n\t\t\t\"products\": [\n\t\t\t\t{\n\t\t\t\t\t\"id\": {\n\t\t\t\t\t\t\"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n\t\t\t\t\t},\n\t\t\t\t\t\"title\": {\n\t\t\t\t\t\t\"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n\t\t\t\t\t},\n\t\t\t\t\t\"duration\": {\n\t\t\t\t\t\t\"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n\t\t\t\t\t},\n\t\t\t\t\t\"description\": {\n\t\t\t\t\t\t\"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n\t\t\t\t\t},\n\t\t\t\t\t\"price\": {\n\t\t\t\t\t\t\"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"id\": {\n\t\t\t\t\t\t\"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n\t\t\t\t\t},\n\t\t\t\t\t\"title\": {\n\t\t\t\t\t\t\"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n\t\t\t\t\t},\n\t\t\t\t\t\"duration\": {\n\t\t\t\t\t\t\"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n\t\t\t\t\t},\n\t\t\t\t\t\"description\": {\n\t\t\t\t\t\t\"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n\t\t\t\t\t},\n\t\t\t\t\t\"price\": {\n\t\t\t\t\t\t\"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t]\n\t\t},\n\t\t{\n\t\t\t\"id\": \"<number>\",\n\t\t\t\"name\": \"<string>\",\n\t\t\t\"products\": [\n\t\t\t\t{\n\t\t\t\t\t\"id\": {\n\t\t\t\t\t\t\"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n\t\t\t\t\t},\n\t\t\t\t\t\"title\": {\n\t\t\t\t\t\t\"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n\t\t\t\t\t},\n\t\t\t\t\t\"duration\": {\n\t\t\t\t\t\t\"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n\t\t\t\t\t},\n\t\t\t\t\t\"description\": {\n\t\t\t\t\t\t\"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n\t\t\t\t\t},\n\t\t\t\t\t\"price\": {\n\t\t\t\t\t\t\"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"id\": {\n\t\t\t\t\t\t\"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n\t\t\t\t\t},\n\t\t\t\t\t\"title\": {\n\t\t\t\t\t\t\"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n\t\t\t\t\t},\n\t\t\t\t\t\"duration\": {\n\t\t\t\t\t\t\"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n\t\t\t\t\t},\n\t\t\t\t\t\"description\": {\n\t\t\t\t\t\t\"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n\t\t\t\t\t},\n\t\t\t\t\t\"price\": {\n\t\t\t\t\t\t\"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t]\n\t\t}\n\t],\n\t\"lat\": \"<number>\",\n\t\"long\": \"<number>\"\n}"
+								},
+								{
+									"id": "486d2008-0f52-4950-a324-01332b1ab76c",
+									"name": "No company found for the provided `companyId`",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/companies/:companyId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"companies",
+												":companyId"
+											],
+											"variable": [
+												{
+													"key": "companyId",
+													"value": "-70436581",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n\t\"message\": \"<string>\"\n}"
+								},
+								{
+									"id": "3ad4d82f-552e-434f-8ed1-49af22590386",
+									"name": "Unexpected error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/companies/:companyId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"companies",
+												":companyId"
+											],
+											"variable": [
+												{
+													"key": "companyId",
+													"value": "-70436581",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n\t\"message\": \"<string>\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Get images for the specified `companyId`",
+							"id": "7ca7ee73-a4b2-424d-bb46-9c9497d1c732",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/companies/:companyId/images",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"companies",
+										":companyId",
+										"images"
+									],
+									"variable": [
+										{
+											"key": "companyId",
+											"value": "-70436581",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "58e0dd8d-7477-485a-9a5d-e44a685a5ed9",
+									"name": "Array of image URLs for the specified `companyId`",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/companies/:companyId/images",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"companies",
+												":companyId",
+												"images"
+											],
+											"variable": [
+												{
+													"key": "companyId",
+													"value": "-70436581",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "[\n\t{\n\t\t\"id\": \"<number>\",\n\t\t\"url\": \"<string>\"\n\t},\n\t{\n\t\t\"id\": \"<number>\",\n\t\t\"url\": \"<string>\"\n\t}\n]"
+								},
+								{
+									"id": "7fb0999f-2fdb-47b7-a98d-a25d53f468f5",
+									"name": "No company found for the provided `companyId`",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/companies/:companyId/images",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"companies",
+												":companyId",
+												"images"
+											],
+											"variable": [
+												{
+													"key": "companyId",
+													"value": "-70436581",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n\t\"message\": \"<string>\"\n}"
+								},
+								{
+									"id": "90fdbbd5-64fa-42a0-8262-2803d4980fed",
+									"name": "Unexpected error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/companies/:companyId/images",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"companies",
+												":companyId",
+												"images"
+											],
+											"variable": [
+												{
+													"key": "companyId",
+													"value": "-70436581",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n\t\"message\": \"<string>\"\n}"
+								}
+							]
+						}
+					],
+					"id": "60ab94c4-7894-4f75-ab51-c27117903ffd"
+				},
+				{
+					"name": "Get all supported cities",
+					"id": "322a898c-4cb3-4cef-b30c-c05f80f06e02",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/companies?q=aliquip id in offici&category_id=-77653084.89779015&brand_id=-77653084.89779015&city_id=-77653084.89779015&featured=false&latest=true&sort=desc",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"companies"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "aliquip id in offici",
+									"description": "Search word that should be used for querying the database"
+								},
+								{
+									"key": "category_id",
+									"value": "-77653084.89779015",
+									"description": "Show companies by category_id (Filter only by certain category)"
+								},
+								{
+									"key": "brand_id",
+									"value": "-77653084.89779015",
+									"description": "Show brands by brand_id (Filter only by certain brand)"
+								},
+								{
+									"key": "city_id",
+									"value": "-77653084.89779015",
+									"description": "Show brands by city_id (Filter only by certain city)"
+								},
+								{
+									"key": "featured",
+									"value": "false",
+									"description": "Show only featured companies"
+								},
+								{
+									"key": "latest",
+									"value": "true",
+									"description": "Show only the latest companies that are added"
+								},
+								{
+									"key": "sort",
+									"value": "desc",
+									"description": "Sort the companies by name (ascending or descending)"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "d0627c66-87b6-4e33-ba8a-89a89d8c7047",
+							"name": "Array containing Companies that match the filter",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/companies?q=<string>&category_id=<number>&brand_id=<number>&city_id=<number>&featured=<boolean>&latest=<boolean>&sort=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"companies"
+									],
+									"query": [
+										{
+											"key": "q",
+											"value": "<string>"
+										},
+										{
+											"key": "category_id",
+											"value": "<number>"
+										},
+										{
+											"key": "brand_id",
+											"value": "<number>"
+										},
+										{
+											"key": "city_id",
+											"value": "<number>"
+										},
+										{
+											"key": "featured",
+											"value": "<boolean>"
+										},
+										{
+											"key": "latest",
+											"value": "<boolean>"
+										},
+										{
+											"key": "sort",
+											"value": "<string>"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n\t{\n\t\t\"id\": \"<number>\",\n\t\t\"title\": \"<string>\",\n\t\t\"desc\": \"<string>\",\n\t\t\"address\": \"<string>\",\n\t\t\"categories\": [\n\t\t\t{\n\t\t\t\t\"id\": \"<number>\",\n\t\t\t\t\"name\": \"<string>\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"id\": \"<number>\",\n\t\t\t\t\"name\": \"<string>\"\n\t\t\t}\n\t\t],\n\t\t\"email\": \"<string>\",\n\t\t\"images\": [\n\t\t\t{\n\t\t\t\t\"id\": \"<number>\",\n\t\t\t\t\"url\": \"<string>\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"id\": \"<number>\",\n\t\t\t\t\"url\": \"<string>\"\n\t\t\t}\n\t\t],\n\t\t\"is_opened\": \"<boolean>\",\n\t\t\"is_reservation_enabled\": \"<boolean>\",\n\t\t\"lat\": \"<number>\",\n\t\t\"long\": \"<number>\"\n\t},\n\t{\n\t\t\"id\": \"<number>\",\n\t\t\"title\": \"<string>\",\n\t\t\"desc\": \"<string>\",\n\t\t\"address\": \"<string>\",\n\t\t\"categories\": [\n\t\t\t{\n\t\t\t\t\"id\": \"<number>\",\n\t\t\t\t\"name\": \"<string>\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"id\": \"<number>\",\n\t\t\t\t\"name\": \"<string>\"\n\t\t\t}\n\t\t],\n\t\t\"email\": \"<string>\",\n\t\t\"images\": [\n\t\t\t{\n\t\t\t\t\"id\": \"<number>\",\n\t\t\t\t\"url\": \"<string>\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"id\": \"<number>\",\n\t\t\t\t\"url\": \"<string>\"\n\t\t\t}\n\t\t],\n\t\t\"is_opened\": \"<boolean>\",\n\t\t\"is_reservation_enabled\": \"<boolean>\",\n\t\t\"lat\": \"<number>\",\n\t\t\"long\": \"<number>\"\n\t}\n]"
+						},
+						{
+							"id": "edd90571-893d-447f-b8dd-b34852fd878d",
+							"name": "Unexpected error",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/companies?q=<string>&category_id=<number>&brand_id=<number>&city_id=<number>&featured=<boolean>&latest=<boolean>&sort=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"companies"
+									],
+									"query": [
+										{
+											"key": "q",
+											"value": "<string>"
+										},
+										{
+											"key": "category_id",
+											"value": "<number>"
+										},
+										{
+											"key": "brand_id",
+											"value": "<number>"
+										},
+										{
+											"key": "city_id",
+											"value": "<number>"
+										},
+										{
+											"key": "featured",
+											"value": "<boolean>"
+										},
+										{
+											"key": "latest",
+											"value": "<boolean>"
+										},
+										{
+											"key": "sort",
+											"value": "<string>"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n\t\"message\": \"<string>\"\n}"
+						}
+					]
+				}
+			],
+			"id": "235e4235-ac6e-4e01-bb5b-c9ae94be543a"
+		},
+		{
+			"name": "staff",
+			"item": [
+				{
+					"name": "Get specific company staff member details in an array",
+					"id": "b6ef649e-3aa6-444a-818a-0edbff514186",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/staff?companyId=-70436581",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"staff"
+							],
+							"query": [
+								{
+									"key": "companyId",
+									"value": "-70436581",
+									"description": "(Required) This will filter staff by `companyId`, to show only services that the specified company offers"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "b8afa7c0-b3a8-4332-8586-aed90cf07628",
+							"name": "Array containing services offered by the specified `companyId`",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/staff?companyId=<integer>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"staff"
+									],
+									"query": [
+										{
+											"key": "companyId",
+											"value": "<integer>"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n\t{\n\t\t\"id\": \"<number>\",\n\t\t\"full_name\": \"<string>\"\n\t},\n\t{\n\t\t\"id\": \"<number>\",\n\t\t\"full_name\": \"<string>\"\n\t}\n]"
+						},
+						{
+							"id": "102df680-7b33-4a36-aff5-d1d22f1d0333",
+							"name": "No company found for the provided `companyId`",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/staff?companyId=<integer>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"staff"
+									],
+									"query": [
+										{
+											"key": "companyId",
+											"value": "<integer>"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n\t\"message\": \"<string>\"\n}"
+						},
+						{
+							"id": "043be8e7-7a75-4f82-be98-2d6d60dc202d",
+							"name": "Unexpected error",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/staff?companyId=<integer>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"staff"
+									],
+									"query": [
+										{
+											"key": "companyId",
+											"value": "<integer>"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n\t\"message\": \"<string>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get staff availability for a certain date",
+					"id": "07fda4c6-6c45-46b1-add7-a175bfe54fa3",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/staff/:staffId/availability?date=aliquip id in offici",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"staff",
+								":staffId",
+								"availability"
+							],
+							"query": [
+								{
+									"key": "date",
+									"value": "aliquip id in offici",
+									"description": "Specify the `date` you want to check availability for. If date is not specified, API will return availability for today in UTC"
+								}
+							],
+							"variable": [
+								{
+									"key": "staffId",
+									"value": "-70436581",
+									"description": "(Required) Specify the `staffId` you want to check availability for"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "c792caeb-5aa0-4f8f-8683-9c06f9e78d3d",
+							"name": "Array containing availability for a specified `staffId`, filtered by `date` and sorted ascending",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/staff/:staffId/availability?date=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"staff",
+										":staffId",
+										"availability"
+									],
+									"query": [
+										{
+											"key": "date",
+											"value": "<string>"
+										}
+									],
+									"variable": [
+										{
+											"key": "staffId",
+											"value": "-70436581",
+											"description": "(Required) Specify the `staffId` you want to check availability for"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n\t\"id\": \"<number>\",\n\t\"full_name\": \"<string>\",\n\t\"date\": \"<date>\",\n\t\"availability\": [\n\t\t{\n\t\t\t\"date_from\": \"<date>\",\n\t\t\t\"time_from\": \"<time>\",\n\t\t\t\"date_to\": \"<date>\",\n\t\t\t\"time_to\": \"<time>\",\n\t\t\t\"duration\": \"<number>\"\n\t\t},\n\t\t{\n\t\t\t\"date_from\": \"<date>\",\n\t\t\t\"time_from\": \"<time>\",\n\t\t\t\"date_to\": \"<date>\",\n\t\t\t\"time_to\": \"<time>\",\n\t\t\t\"duration\": \"<number>\"\n\t\t}\n\t]\n}"
+						},
+						{
+							"id": "f8c6f36b-d3d6-4978-a1e6-cbc8a2a5a4aa",
+							"name": "No staff found for the provided `staffId`",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/staff/:staffId/availability?date=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"staff",
+										":staffId",
+										"availability"
+									],
+									"query": [
+										{
+											"key": "date",
+											"value": "<string>"
+										}
+									],
+									"variable": [
+										{
+											"key": "staffId",
+											"value": "-70436581",
+											"description": "(Required) Specify the `staffId` you want to check availability for"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n\t\"message\": \"<string>\"\n}"
+						},
+						{
+							"id": "0749cd4e-967c-49a8-b55e-3f656e5bb3dd",
+							"name": "Unexpected error",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/staff/:staffId/availability?date=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"staff",
+										":staffId",
+										"availability"
+									],
+									"query": [
+										{
+											"key": "date",
+											"value": "<string>"
+										}
+									],
+									"variable": [
+										{
+											"key": "staffId",
+											"value": "-70436581",
+											"description": "(Required) Specify the `staffId` you want to check availability for"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n\t\"message\": \"<string>\"\n}"
+						}
+					]
+				}
+			],
+			"id": "bf55891d-9026-47ad-aee1-be8109c7c1d3"
+		},
+		{
+			"name": "appointments",
+			"item": [
+				{
+					"name": "Submit new appointment to the store/company",
+					"id": "5ebd4b21-116e-47ee-90b1-fdc80f5fecd5",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"value\": \"reference #/components/schemas/AppointmentReq not found in the OpenAPI spec\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/appointments",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"appointments"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "03da37f9-1631-4227-b367-d3827d5059a9",
+							"name": "Appointment response details and confirmation",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"value\": \"reference #/components/schemas/AppointmentReq not found in the OpenAPI spec\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/appointments",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"appointments"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n\t\"date_from\": \"<date>\",\n\t\"date_to\": \"<date>\",\n\t\"email\": \"<string>\",\n\t\"full_name\": \"<string>\",\n\t\"id\": \"<number>\",\n\t\"is_phone_validated\": \"<boolean>\",\n\t\"is_toc_accepted\": \"<boolean>\",\n\t\"phone\": \"<string>\",\n\t\"product_id\": \"<number>\",\n\t\"staff_id\": \"<number>\",\n\t\"status\": \"<string>\",\n\t\"time_from\": \"<time>\",\n\t\"time_to\": \"<time>\",\n\t\"user_id\": \"<number>\"\n}"
+						},
+						{
+							"id": "18f09d58-9829-436f-9941-4e67e1562217",
+							"name": "Unexpected error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"value\": \"reference #/components/schemas/AppointmentReq not found in the OpenAPI spec\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/appointments",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"appointments"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n\t\"message\": \"<string>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get list of appointments for the logged in user",
+					"id": "b36b0335-837e-48e1-b2fb-ba39d7ceac7e",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"date_from\": \"<date>\",\n\t\"date_to\": \"<date>\",\n\t\"email\": \"<string>\",\n\t\"full_name\": \"<string>\",\n\t\"id\": \"<number>\",\n\t\"is_phone_validated\": \"<boolean>\",\n\t\"is_toc_accepted\": \"<boolean>\",\n\t\"phone\": \"<string>\",\n\t\"product_id\": \"<number>\",\n\t\"staff_id\": \"<number>\",\n\t\"status\": \"<string>\",\n\t\"time_from\": \"<time>\",\n\t\"time_to\": \"<time>\",\n\t\"user_id\": \"<number>\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/appointments",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"appointments"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "005f8834-7ed2-45ad-96d5-f2c556d5c44b",
+							"name": "Appointment response details and confirmation",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"date_from\": \"<date>\",\n\t\"date_to\": \"<date>\",\n\t\"email\": \"<string>\",\n\t\"full_name\": \"<string>\",\n\t\"id\": \"<number>\",\n\t\"is_phone_validated\": \"<boolean>\",\n\t\"is_toc_accepted\": \"<boolean>\",\n\t\"phone\": \"<string>\",\n\t\"product_id\": \"<number>\",\n\t\"staff_id\": \"<number>\",\n\t\"status\": \"<string>\",\n\t\"time_from\": \"<time>\",\n\t\"time_to\": \"<time>\",\n\t\"user_id\": \"<number>\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/appointments",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"appointments"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n\t{\n\t\t\"date_from\": \"<date>\",\n\t\t\"date_to\": \"<date>\",\n\t\t\"email\": \"<string>\",\n\t\t\"full_name\": \"<string>\",\n\t\t\"id\": \"<number>\",\n\t\t\"is_phone_validated\": \"<boolean>\",\n\t\t\"is_toc_accepted\": \"<boolean>\",\n\t\t\"phone\": \"<string>\",\n\t\t\"product_id\": \"<number>\",\n\t\t\"staff_id\": \"<number>\",\n\t\t\"status\": \"<string>\",\n\t\t\"time_from\": \"<time>\",\n\t\t\"time_to\": \"<time>\",\n\t\t\"user_id\": \"<number>\"\n\t},\n\t{\n\t\t\"date_from\": \"<date>\",\n\t\t\"date_to\": \"<date>\",\n\t\t\"email\": \"<string>\",\n\t\t\"full_name\": \"<string>\",\n\t\t\"id\": \"<number>\",\n\t\t\"is_phone_validated\": \"<boolean>\",\n\t\t\"is_toc_accepted\": \"<boolean>\",\n\t\t\"phone\": \"<string>\",\n\t\t\"product_id\": \"<number>\",\n\t\t\"staff_id\": \"<number>\",\n\t\t\"status\": \"<string>\",\n\t\t\"time_from\": \"<time>\",\n\t\t\"time_to\": \"<time>\",\n\t\t\"user_id\": \"<number>\"\n\t}\n]"
+						},
+						{
+							"id": "2a26dbd7-d97c-4a0a-ba0d-c97d56a953f5",
+							"name": "Bad request (missing parameters)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"date_from\": \"<date>\",\n\t\"date_to\": \"<date>\",\n\t\"email\": \"<string>\",\n\t\"full_name\": \"<string>\",\n\t\"id\": \"<number>\",\n\t\"is_phone_validated\": \"<boolean>\",\n\t\"is_toc_accepted\": \"<boolean>\",\n\t\"phone\": \"<string>\",\n\t\"product_id\": \"<number>\",\n\t\"staff_id\": \"<number>\",\n\t\"status\": \"<string>\",\n\t\"time_from\": \"<time>\",\n\t\"time_to\": \"<time>\",\n\t\"user_id\": \"<number>\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/appointments",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"appointments"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n\t\"message\": \"<string>\"\n}"
+						},
+						{
+							"id": "e0805877-3e59-4db3-b3fd-95e31ffa8caf",
+							"name": "Unauthorized access",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"date_from\": \"<date>\",\n\t\"date_to\": \"<date>\",\n\t\"email\": \"<string>\",\n\t\"full_name\": \"<string>\",\n\t\"id\": \"<number>\",\n\t\"is_phone_validated\": \"<boolean>\",\n\t\"is_toc_accepted\": \"<boolean>\",\n\t\"phone\": \"<string>\",\n\t\"product_id\": \"<number>\",\n\t\"staff_id\": \"<number>\",\n\t\"status\": \"<string>\",\n\t\"time_from\": \"<time>\",\n\t\"time_to\": \"<time>\",\n\t\"user_id\": \"<number>\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/appointments",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"appointments"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n\t\"message\": \"<string>\"\n}"
+						},
+						{
+							"id": "3f24dd0c-cfd9-4e79-9c96-fc3caaee8ee9",
+							"name": "Unexpected error",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"date_from\": \"<date>\",\n\t\"date_to\": \"<date>\",\n\t\"email\": \"<string>\",\n\t\"full_name\": \"<string>\",\n\t\"id\": \"<number>\",\n\t\"is_phone_validated\": \"<boolean>\",\n\t\"is_toc_accepted\": \"<boolean>\",\n\t\"phone\": \"<string>\",\n\t\"product_id\": \"<number>\",\n\t\"staff_id\": \"<number>\",\n\t\"status\": \"<string>\",\n\t\"time_from\": \"<time>\",\n\t\"time_to\": \"<time>\",\n\t\"user_id\": \"<number>\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/appointments",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"appointments"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n\t\"message\": \"<string>\"\n}"
+						}
+					]
+				}
+			],
+			"id": "97fe210e-796e-41ef-b148-5400d2a5c776"
+		},
+		{
+			"name": "Get all supported categories",
+			"id": "6b2c79bf-2199-4e68-ab0b-6dae4930a45c",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/categories",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"categories"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "0f02fd31-99cd-47b7-9c5b-f39a44659542",
+					"name": "Array containing all the supported categories",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/categories",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"categories"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "[\n\t{\n\t\t\"id\": \"<number>\",\n\t\t\"name\": \"<string>\"\n\t},\n\t{\n\t\t\"id\": \"<number>\",\n\t\t\"name\": \"<string>\"\n\t}\n]"
+				},
+				{
+					"id": "fce18a74-d9b5-4c45-92da-7fe167aff647",
+					"name": "Unexpected error",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/categories",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"categories"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n\t\"message\": \"<string>\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get all supported brands",
+			"id": "63e0a9fc-c94c-4071-b8cd-939d0c3f14d4",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/brands",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"brands"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "ab6f1722-136b-4c3f-ba3d-846ec5b4addf",
+					"name": "Array containing all the supported brands",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/brands",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"brands"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "[\n\t{\n\t\t\"id\": \"<number>\",\n\t\t\"name\": \"<string>\"\n\t},\n\t{\n\t\t\"id\": \"<number>\",\n\t\t\"name\": \"<string>\"\n\t}\n]"
+				},
+				{
+					"id": "c5b3ce4c-9199-4c38-83c3-f4dc5d7f9648",
+					"name": "Unexpected error",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/brands",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"brands"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n\t\"message\": \"<string>\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get all supported cities",
+			"id": "c3a7c335-c51e-4900-87c9-527d2754deb7",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/cities",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"cities"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "410cbe5a-6000-423b-a136-b9433e9a6fea",
+					"name": "Array containing all the supported cities",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/cities",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"cities"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "[\n\t{\n\t\t\"id\": \"<number>\",\n\t\t\"name\": \"<string>\"\n\t},\n\t{\n\t\t\"id\": \"<number>\",\n\t\t\"name\": \"<string>\"\n\t}\n]"
+				},
+				{
+					"id": "01d8baa5-db22-46f4-8f6d-ff8cd8b0ecca",
+					"name": "Unexpected error",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/cities",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"cities"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n\t\"message\": \"<string>\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get services offered by a specific company",
+			"id": "e8a64d0e-f423-410f-98a4-66e57bff04da",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/services?companyId=-70436581",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"services"
+					],
+					"query": [
+						{
+							"key": "companyId",
+							"value": "-70436581",
+							"description": "(Required) This will filter services by `companyId`, to show only services that the specified company offers"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "64832f5f-1f98-458f-a4f4-a42d9c3b4045",
+					"name": "Array containing services offered by the specified `companyId`",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/services?companyId=<integer>",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"services"
+							],
+							"query": [
+								{
+									"key": "companyId",
+									"value": "<integer>"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "[\n\t{\n\t\t\"id\": \"<number>\",\n\t\t\"name\": \"<string>\",\n\t\t\"products\": [\n\t\t\t{\n\t\t\t\t\"id\": \"<number>\",\n\t\t\t\t\"title\": \"<string>\",\n\t\t\t\t\"duration\": \"<integer>\",\n\t\t\t\t\"description\": \"<string>\",\n\t\t\t\t\"price\": \"<number>\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"id\": \"<number>\",\n\t\t\t\t\"title\": \"<string>\",\n\t\t\t\t\"duration\": \"<integer>\",\n\t\t\t\t\"description\": \"<string>\",\n\t\t\t\t\"price\": \"<number>\"\n\t\t\t}\n\t\t]\n\t},\n\t{\n\t\t\"id\": \"<number>\",\n\t\t\"name\": \"<string>\",\n\t\t\"products\": [\n\t\t\t{\n\t\t\t\t\"id\": \"<number>\",\n\t\t\t\t\"title\": \"<string>\",\n\t\t\t\t\"duration\": \"<integer>\",\n\t\t\t\t\"description\": \"<string>\",\n\t\t\t\t\"price\": \"<number>\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"id\": \"<number>\",\n\t\t\t\t\"title\": \"<string>\",\n\t\t\t\t\"duration\": \"<integer>\",\n\t\t\t\t\"description\": \"<string>\",\n\t\t\t\t\"price\": \"<number>\"\n\t\t\t}\n\t\t]\n\t}\n]"
+				},
+				{
+					"id": "b3db222f-cd5b-4a4d-a13c-40ec93628b6b",
+					"name": "No company found for the provided `companyId`",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/services?companyId=<integer>",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"services"
+							],
+							"query": [
+								{
+									"key": "companyId",
+									"value": "<integer>"
+								}
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n\t\"message\": \"<string>\"\n}"
+				},
+				{
+					"id": "f9d4113e-ec2d-422b-bfb4-f6e7c6107040",
+					"name": "Unexpected error",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/services?companyId=<integer>",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"services"
+							],
+							"query": [
+								{
+									"key": "companyId",
+									"value": "<integer>"
+								}
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n\t\"message\": \"<string>\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get feedback items to show on landing page",
+			"id": "a9dcc5ef-7c8b-4c12-86af-3a28439c4557",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/feedback",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"feedback"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "b71b3b8c-a38a-45ed-a79b-d1de8c573a4c",
+					"name": "Array containing all stored feedback items for the page",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/feedback",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"feedback"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "[\n\t{\n\t\t\"description\": \"<string>\",\n\t\t\"id\": \"<number>\",\n\t\t\"name\": \"<string>\",\n\t\t\"score\": \"<number>\"\n\t},\n\t{\n\t\t\"description\": \"<string>\",\n\t\t\"id\": \"<number>\",\n\t\t\"name\": \"<string>\",\n\t\t\"score\": \"<number>\"\n\t}\n]"
+				},
+				{
+					"id": "cf6b81d6-ca3c-4590-9ac9-e8403d4caa97",
+					"name": "Unexpected error",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/feedback",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"feedback"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n\t\"message\": \"<string>\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Sends a sign in request. If user does not exist - system will create it and return the User object; otherwise, it will just return the User object",
+			"id": "e30bcfcd-8209-4383-8fd5-ff336f133460",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "<Bearer Token>",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"value\": \"reference #/components/schemas/RegisterRequest not found in the OpenAPI spec\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/signIn",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"signIn"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "c4a8d30c-9414-4ea5-b75b-b60d5b05d233",
+					"name": "Logged-in user details",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"description": "Added as a part of security scheme: bearer",
+								"key": "Authorization",
+								"value": "Bearer <token>"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"value\": \"reference #/components/schemas/RegisterRequest not found in the OpenAPI spec\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/signIn",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"signIn"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n\t\"id\": \"<number>\",\n\t\"email\": \"<string>\",\n\t\"phone\": \"<string>\",\n\t\"full_name\": \"<string>\"\n}"
+				},
+				{
+					"id": "3f340547-78ed-44e8-9094-501d68a79cb9",
+					"name": "Bad request (missing parameters)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"description": "Added as a part of security scheme: bearer",
+								"key": "Authorization",
+								"value": "Bearer <token>"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"value\": \"reference #/components/schemas/RegisterRequest not found in the OpenAPI spec\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/signIn",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"signIn"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n\t\"message\": \"<string>\"\n}"
+				},
+				{
+					"id": "3fda4d80-9359-40d2-acdf-986364934d00",
+					"name": "Bad credentials",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"description": "Added as a part of security scheme: bearer",
+								"key": "Authorization",
+								"value": "Bearer <token>"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"value\": \"reference #/components/schemas/RegisterRequest not found in the OpenAPI spec\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/signIn",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"signIn"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n\t\"message\": \"<string>\"\n}"
+				},
+				{
+					"id": "158a219d-59f2-4eb2-9a21-007b36658ce6",
+					"name": "Unexpected error",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"description": "Added as a part of security scheme: bearer",
+								"key": "Authorization",
+								"value": "Bearer <token>"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"value\": \"reference #/components/schemas/RegisterRequest not found in the OpenAPI spec\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/signIn",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"signIn"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n\t\"message\": \"<string>\"\n}"
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"id": "7efe5323-8c8d-459d-bd4e-7baafb4d5768",
+			"key": "baseUrl",
+			"value": "https://api.tajming.hr",
+			"type": "string"
+		}
+	]
+}
