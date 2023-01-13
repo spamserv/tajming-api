@@ -1,10 +1,11 @@
-import { Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Service } from "src/services/entities/service.entity";
+import { Entity, PrimaryGeneratedColumn, Column, JoinColumn, OneToOne } from "typeorm";
 
-@Entity()
+@Entity({name: 'categories'})
 export class Category {
     @PrimaryGeneratedColumn()
     id: number;
 
-    @PrimaryGeneratedColumn()
+    @Column()
     name: string;
 }

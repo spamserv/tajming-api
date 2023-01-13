@@ -13,8 +13,8 @@ export class BrandsController {
   }
 
   @Get()
-  findAll() {
-    return this.brandsService.findAll();
+  async findAll() {
+    return await this.brandsService.findAll();
   }
 
   @Get(':id')

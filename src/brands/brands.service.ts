@@ -16,8 +16,10 @@ export class BrandsService {
     return await this.brandRepository.save(createBrandDto)
   }
 
-  findAll(): Promise<Brand[]> {
-    return this.brandRepository.find()
+  async findAll(): Promise<Brand[]> {
+    const brands = await this.brandRepository.find()
+    console.log(`brands: ${brands}`)
+    return brands
   }
 
   findOne(id: number): Promise<Brand> {

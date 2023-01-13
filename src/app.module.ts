@@ -14,6 +14,9 @@ import { FeedbackModule } from './feedback/feedback.module';
 import { AppointmentsModule } from './appointments/appointments.module';
 
 import { Brand } from './brands/entities/brand.entity';
+import { Category } from './categories/entities/category.entity';
+import { City } from './cities/entities/city.entity';
+import { DatabaseConfigService } from './database/database-config.service';
 
 @Module({
   imports: [
@@ -28,15 +31,9 @@ import { Brand } from './brands/entities/brand.entity';
     ConfigModule.forRoot({
       isGlobal: true,
     }),
-    TypeOrmModule.forRoot({
-      type: 'mysql',
-      host: 'localhost',
-      port: 3306,
-      username: 'root',
-      password: 'root',
-      database: 'test',
-      entities: [Brand],
-      synchronize: true,
+    TypeOrmModule.forRootAsync({
+      useClass: DatabaseConfigService,
+      inject: [DatabaseConfigService]
     }),
   ],
   controllers: [AppController],
