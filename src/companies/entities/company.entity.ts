@@ -66,8 +66,9 @@ export class Company {
     @Column({type: 'date', name: 'created_at'})
     createdAt: string
 
-    @Column({type: 'date', name: 'created_at'})
-    deletedAt: string
+    @Column()
+    @JoinColumn({referencedColumnName: 'name', })
+    cityName: string
 
     @OneToMany(type => CompanyImage, image => image.company)
     companyImages: CompanyImage
