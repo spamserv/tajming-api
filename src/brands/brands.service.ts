@@ -17,9 +17,7 @@ export class BrandsService {
   }
 
   async findAll(): Promise<Brand[]> {
-    const brands = await this.brandRepository.find()
-    console.log(`brands: ${brands}`)
-    return brands
+    return await this.brandRepository.find()
   }
 
   findOne(id: number): Promise<Brand> {

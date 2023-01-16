@@ -6,6 +6,7 @@ import { TypeOrmModuleOptions, TypeOrmOptionsFactory } from "@nestjs/typeorm";
 import { Brand } from "src/brands/entities/brand.entity";
 import { Category } from "src/categories/entities/category.entity";
 import { City } from "src/cities/entities/city.entity";
+import { Service } from "src/services/entities/service.entity";
 
 @Injectable()
 export class DatabaseConfigService implements TypeOrmOptionsFactory {
@@ -20,8 +21,8 @@ export class DatabaseConfigService implements TypeOrmOptionsFactory {
             username: this.configService.get<string>('DB_USERNAME'),
             password: this.configService.get<string>('DB_PASSWORD'),
             database: this.configService.get<string>('DB_NAME'),
-            entities: [Brand, Category, City],
-            synchronize: true,
+            entities: [Brand, Category, City, Service],
+            synchronize: false,
         }
     };
 }

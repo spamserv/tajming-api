@@ -8,27 +8,27 @@ export class ServicesController {
   constructor(private readonly servicesService: ServicesService) {}
 
   @Post()
-  create(@Body() createServiceDto: CreateServiceDto) {
-    return this.servicesService.create(createServiceDto);
+  async create(@Body() createServiceDto: CreateServiceDto) {
+    return await this.servicesService.create(createServiceDto);
   }
 
   @Get()
-  findAll() {
-    return this.servicesService.findAll();
+  async findAll() {
+    return await this.servicesService.findAll();
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.servicesService.findOne(+id);
+  async findOne(@Param('id') id: string) {
+    return await this.servicesService.findOne(+id);
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updateServiceDto: UpdateServiceDto) {
-    return this.servicesService.update(+id, updateServiceDto);
+  async update(@Param('id') id: string, @Body() updateServiceDto: UpdateServiceDto) {
+    return await this.servicesService.update(+id, updateServiceDto);
   }
 
   @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.servicesService.remove(+id);
+  async remove(@Param('id') id: string) {
+    return await this.servicesService.remove(+id);
   }
 }

@@ -16,12 +16,12 @@ export class CategoriesService {
     return await this.categoryRepository.save(createCategoryDto)
   }
 
-  findAll(): Promise<Category[]> {
-    return this.categoryRepository.find()
+  async findAll(): Promise<Category[]> {
+    return await this.categoryRepository.find()
   }
 
-  findOne(id: number): Promise<Category> {
-    return this.categoryRepository.findOneBy({id})
+  async findOne(id: number): Promise<Category> {
+    return await this.categoryRepository.findOneBy({id})
   }
 
   async update(id: number, updateCategoryDto: UpdateCategoryDto): Promise<Category> {

@@ -1,26 +1,35 @@
 import { Injectable } from '@nestjs/common';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Repository } from 'typeorm';
 import { CreateServiceDto } from './dto/create-service.dto';
 import { UpdateServiceDto } from './dto/update-service.dto';
+import { Service } from './entities/service.entity';
 
 @Injectable()
 export class ServicesService {
-  create(createServiceDto: CreateServiceDto) {
-    return 'This action adds a new service';
+  
+  constructor(
+    @InjectRepository(Service) 
+    private serviceRepository: Repository<Service>
+  ) {}
+
+  async create(createServiceDto: CreateServiceDto): Promise<Service> {
+    return await this.serviceRepository.save(createServiceDto)
   }
 
-  findAll() {
-    return `This action returns all services`;
+  async findAll(): Promise<Service[]> {
+    return await this.serviceRepository.find()
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} service`;
+  async findOne(id: number): Promise<Service> {
+    return await this.serviceRepository.findOneBy({id})
   }
 
-  update(id: number, updateServiceDto: UpdateServiceDto) {
-    return `This action updates a #${id} service`;
+  async update(id: number, updateServiceDto: UpdateServiceDto): Promise<Service> {
+    return await this.serviceRepository.save(updateServiceDto)
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} service`;
+  async remove(id: number): Promise<void> {
+    await this.serviceRepository.delete(id)
   }
 }
