@@ -13,9 +13,6 @@ import { StaffModule } from './staff/staff.module';
 import { FeedbackModule } from './feedback/feedback.module';
 import { AppointmentsModule } from './appointments/appointments.module';
 
-import { Brand } from './brands/entities/brand.entity';
-import { Category } from './categories/entities/category.entity';
-import { City } from './cities/entities/city.entity';
 import { DatabaseConfigService } from './database/database-config.service';
 
 @Module({

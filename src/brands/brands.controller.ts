@@ -1,4 +1,5 @@
 import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import { TypeORMError } from 'typeorm';
 import { BrandsService } from './brands.service';
 import { CreateBrandDto } from './dto/create-brand.dto';
 import { UpdateBrandDto } from './dto/update-brand.dto';
@@ -19,7 +20,11 @@ export class BrandsController {
 
   @Get(':id')
   async findOne(@Param('id') id: string) {
-    return await this.brandsService.findOne(+id);
+    try {
+      return await this.brandsService.findOne(+id);
+    } catch (error) {
+      throw error
+    }
   }
 
   @Patch(':id')

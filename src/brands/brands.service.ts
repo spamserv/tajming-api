@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { HttpException, HttpStatus, Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { CreateBrandDto } from './dto/create-brand.dto';
@@ -20,8 +20,13 @@ export class BrandsService {
     return await this.brandRepository.find()
   }
 
-  findOne(id: number): Promise<Brand> {
-    return this.brandRepository.findOneBy({ id })
+  async findOne(id: number): Promise<Brand> {
+    try {
+      return await this.brandRepository.findOneByOrFail({ id })
+    } catch (error) {
+      throw new NotFoundException(error)
+    }
+    
   }
 
   async update(id: number, updateBrandDto: UpdateBrandDto): Promise<Brand> {
