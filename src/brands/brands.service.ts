@@ -26,7 +26,6 @@ export class BrandsService {
     } catch (error) {
       throw new NotFoundException(error)
     }
-    
   }
 
   async update(id: number, updateBrandDto: UpdateBrandDto): Promise<Brand> {
